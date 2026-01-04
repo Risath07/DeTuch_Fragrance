@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeTuch Fragrance | Exclusive Scents</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --primary-black: #111111;
+            --accent-red: #cc0000;
+            --off-white: #f9f9f9;
+            --text-grey: #555555;
+            --whatsapp-green: #25d366;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: var(--primary-black);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-black);
+            margin-left: 25px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 60vh;
+            background: #1a1a1a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* Add a background image here if you want */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a00000;
+        }
+
+        /* --- PRODUCT GRID --- */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 60px 0 40px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding-bottom: 60px;
+        }
+
+        .product-card {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .product-type {
+            font-size: 0.9rem;
+            color: var(--text-grey);
+            margin-bottom: 15px;
+        }
+
+        /* --- FOUNDER SECTION --- */
+        .founder-section {
+            background-color: var(--off-white);
+            padding: 80px 0;
+            margin-top: 50px;
+        }
+
+        .founder-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .founder-img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 10px 10px 0px var(--accent-red);
+        }
+
+        .founder-text {
+            max-width: 500px;
+        }
+
+        .founder-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .founder-role {
+            font-size: 1.1rem;
+            color: var(--accent-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* --- FOOTER & SOCIALS --- */
+        footer {
+            background: var(--primary-black);
+            color: white;
+            text-align: center;
+            padding: 60px 0 40px;
+            margin-top: auto;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-red);
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .float-wa:hover {
+            transform: scale(1.1);
+            color: white;
+        }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .founder-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none; /* Simple hiding for mobile, ideally needs a hamburger menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="DeTuch Fragrance" class="logo-img">
+        <div class="nav-links">
+            <a href="#products">Collection</a>
+            <a href="#founder">The Founder</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>DETUCH FRAGRANCE</h1>
+        <p>Define Your Presence. Experience the Essence of Luxury.</p>
+        <a href="https://wa.me/94700000000" class="btn">Order Now</a>
+    </header>
+
+    <section id="products" class="container">
+        <h2 class="section-title">Latest Arrivals</h2>
+        
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="armaf.png" alt="Armaf Odyssey Mega">
+                <div class="product-name">Armaf Odyssey Mega</div>
+                <div class="product-type">Men / Eau De Parfum / 100ml</div>
+                <a href="https://wa.me/94711121112?text=I'm%20interested%20in%20Armaf%20Odyssey" class="btn" style="font-size: 0.8rem;">Buy via WhatsApp</a>
+            </div>
+
+            <div class="product-card">
+                <img src="ysl.png" alt="YSL Myself Le Parfum">
+                <div class="product-name">YSL MYSLF</div>
+                <div class="product-type">Men / Le Parfum / 100ml</div>
+                <a href="https://wa.me/94711121112?text=I'm%20interested%20in%20YSL%20Le%20Parfum" class="btn" style="font-size: 0.8rem;">Buy via WhatsApp</a>
+            </div>
+
+            <div class="product-card">
+                <img src="ysl2.png" alt="YSL Myself Eau De Parfum">
+                <div class="product-name">YSL MYSLF</div>
+                <div class="product-type">Men / Eau De Parfum / 100ml</div>
+                <a href="https://wa.me/94711121112?text=I'm%20interested%20in%20YSL%20EDP" class="btn" style="font-size: 0.8rem;">Buy via WhatsApp</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="founder" class="founder-section">
+        <div class="container founder-content">
+            <img src="aadil.png" alt="Aadhil Sameem" class="founder-img">
+            
+            <div class="founder-text">
+                <span class="founder-role">The Founder</span>
+                <h2 class="founder-name">Aadhil Sameem</h2>
+                <p>
+                    Welcome to DeTuch Fragrance. We believe that a scent is more than just a fragrance; 
+                    it is a memory, a statement, and a signature. Our mission is to bring you the 
+                    world's finest essences, curated with passion and authenticity.
+                </p>
+                <br>
+                <p><i>"Quality in every drop."</i></p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/detuch.fragrance/" target="_blank"><i class="fab fa-instagram"></i></a>
+                
+                <a href="https://web.facebook.com/profile.php?id=61576865840403" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                
+                <a href="https://wa.me/94711121112" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2026 DeTuch Fragrance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/94711121112" class="float-wa" target="_blank">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
+
+</body>
+</html>
